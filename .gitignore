@@ -1,13 +1,16 @@
-# Vim
+# Editor temp files
 *~
 *.sw[p_]
 
-# IntelliJ IDEA
-*.idea
-
-# Sublime Text
+# IDE/editor project dirs
+.idea
+.vscode
 *.sublime-project
 *.sublime-workspace
+
+# AI agent tool configs
+.agents/
+.codex/
 
 # Ruby Gem
 *.gem
@@ -30,3 +33,7 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+# HEIC images (not supported on web)
+*.heic
+*.HEIC
