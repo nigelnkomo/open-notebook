@@ -1,0 +1,224 @@
+/* ===== Desktop: flex layout for notebook pages (TOC at top-right, sticky) ===== */
+@media (min-width: 1024px) {
+  #main:has(.sidebar__right) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1em;
+
+    > .sidebar {
+      float: none;
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    > .page {
+      float: none;
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding-inline-end: 0;
+
+      .page__inner-wrap {
+        flex: 1;
+        min-width: 0;
+        float: none;
+        clear: none;
+        width: auto;
+        margin-top: 1em;
+      }
+
+      .sidebar__right {
+        width: 200px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 2em;
+        align-self: start;
+        float: none;
+        margin: 1em 0 0;
+        padding-inline-start: 1em;
+
+        .toc {
+          border-radius: 0;
+
+          .nav__title {
+            border-radius: 0;
+          }
+        }
+
+        .toc__menu {
+          max-height: calc(100vh - 7em);
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: $primary-color transparent;
+
+          &::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: $primary-color;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $x-large) {
+    #main:has(.sidebar__right) > .page .sidebar__right {
+      width: 300px;
+    }
+  }
+}
+
+/* ===== Toggle buttons (hidden on desktop) ===== */
+.sidebar-toggle {
+  display: flex;
+  position: fixed;
+  bottom: 1.5em;
+  left: 1.5em;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: $primary-color;
+  color: #fff;
+  border: none !important;
+  outline: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  .sidebar-toggle-icon {
+    stroke-width: 2.5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar-toggle { display: none !important; }
+}
+
+.notebook-content-footer {
+  display: none;
+}
+
+
+.archive__subtitle {
+  margin-bottom: 1em;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+html, body {
+  background-color: $page-bg;
+}
+
+.masthead {
+  background: $page-bg !important;
+  backdrop-filter: none !important;
+}
+
+.greedy-nav {
+  background: $page-bg !important;
+}
+
+.page__footer {
+  background-color: $page-bg !important;
+}
+
+@media (min-width: 48em) {
+  .entries-list {
+    width: calc(100% + 200px);
+  }
+}
+
+@media (min-width: 80em) {
+  .entries-list {
+    width: calc(100% + 300px);
+  }
+}
+
+.archive__item--notebook {
+  display: block;
+  width: 100%;
+  padding: 1.5em 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.archive__item-body {
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+
+.archive__item--notebook .archive__item-authors {
+  margin: 0 0 0.3em;
+  font-size: 0.8em;
+  color: #6e6e73;
+}
+
+.archive__item--notebook .archive__item-title {
+  margin: 0 0 0.3em;
+}
+
+.archive__item--notebook .archive__item-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.archive__item--notebook:hover .archive__item-title a {
+  text-decoration: underline;
+}
+
+.archive__item--notebook .archive__item-excerpt {
+  margin: 0;
+  font-size: 0.85em;
+}
+
+@media (min-width: 48em) {
+  .archive__item-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0;
+  }
+
+  .archive__item--notebook .archive__item-authors {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    text-align: start;
+    font-size: 0.85em;
+  }
+
+  .archive__item--notebook .archive__item-title {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+    text-align: end;
+  }
+
+  .archive__item--notebook .archive__item-excerpt {
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0;
+    text-align: start;
+    font-size: 1em;
+  }
+}

@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .archive {
-  margin-top: 1em;
+  margin-top: 0.75em;
   margin-bottom: 2em;
 
   @include breakpoint($large) {
@@ -20,6 +20,11 @@
 
 .archive__item {
   position: relative;
+  padding: 1.1rem 1.15rem;
+  background: rgba(#fff, 0.88);
+  border: 1px solid rgba($border-color, 0.85);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
 
   a {
     position: relative;
@@ -34,7 +39,8 @@
 .archive__subtitle {
   margin: 1.414em 0 0.5em;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
+  font-size: $type-size-4;
+  line-height: 1.2;
   color: $muted-text-color;
   border-bottom: 1px solid $border-color;
 
@@ -44,9 +50,10 @@
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.15em;
   font-family: $sans-serif-narrow;
-  line-height: initial;
+  line-height: 1.15;
+  font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
 
@@ -72,6 +79,8 @@
 .archive__item-excerpt {
   margin-top: 0;
   font-size: $type-size-6;
+  line-height: 1.45;
+  color: $muted-text-color;
 
   & + p {
     text-indent: 0;
@@ -86,6 +95,7 @@
   position: relative;
   border-radius: $border-radius;
   overflow: hidden;
+  margin-bottom: 0.75rem;
 
   img {
     width: 100%;
@@ -122,6 +132,8 @@
    ========================================================================== */
 
 .list__item {
+  margin-bottom: 1rem;
+
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
@@ -241,6 +253,26 @@
 
   .archive__item-title {
     margin-bottom: 0;
+  }
+}
+
+.notebooks-index {
+  .archive {
+    margin-top: 0.5em;
+  }
+
+  .archive__subtitle {
+    margin-top: 1em;
+    font-size: $type-size-5;
+    border-bottom-color: rgba($border-color, 0.75);
+  }
+
+  .archive__item {
+    max-width: 42rem;
+  }
+
+  .list__item {
+    margin-bottom: 0.75rem;
   }
 }
 

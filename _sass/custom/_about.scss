@@ -1,0 +1,21 @@
+.about .page__title {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.about .page__content {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+.about .page__content h2 {
+  margin-top: 1.5em;
+  border-bottom: 2px solid $border-color;
+  padding-bottom: 0.3em;
+}
+
+.about .page__content ul {
+  list-style: disc;
+  padding-left: 1.5em;
+}

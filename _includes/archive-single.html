@@ -11,6 +11,19 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if post.field %}
+<div class="{{ include.type | default: 'list' }}__item">
+  <article class="archive__item archive__item--notebook" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
+    <div class="archive__item-body">
+      {% if post.authors %}<p class="archive__item-authors">{{ post.authors }}</p>{% endif %}
+      <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+      </h2>
+      {% if post.excerpt %}<p class="archive__item-excerpt p-summary" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    </div>
+  </article>
+</div>
+{% else %}
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
     {% if include.type == "grid" and teaser %}
@@ -20,7 +33,7 @@
     {% endif %}
     <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="{{ post.link }}">{{ title }}</a> <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink" title="permalink">{% include icon.html name="link" %}<span class="sr-only">Permalink</span></a>
       {% else %}
         <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
@@ -29,3 +42,4 @@
     {% if post.excerpt %}<p class="archive__item-excerpt p-summary" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
+{% endif %}

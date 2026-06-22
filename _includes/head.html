@@ -17,10 +17,19 @@
   {%- endif %}
 </script>
 
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" id="theme-light" media="screen">
+<link rel="stylesheet" href="{{ '/assets/css/main-dark.css' | relative_url }}" id="theme-dark" media="screen">
+<script>
+  (function() {
+    var theme = localStorage.getItem('theme');
+    if (theme === null) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-light').disabled = theme === 'dark';
+    document.getElementById('theme-dark').disabled = theme !== 'dark';
+  })();
+</script>
 
 {% if site.head_scripts %}
   {% for script in site.head_scripts %}

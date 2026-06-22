@@ -1,0 +1,39 @@
+{% assign icon_name = include.name | default: include.icon | default: "link" %}
+{% case icon_name %}
+  {% when "calendar-alt" %}
+    {% assign icon_name = "calendar-days" %}
+  {% when "clock" %}
+    {% assign icon_name = "clock-3" %}
+  {% when "file-alt" %}
+    {% assign icon_name = "file-text" %}
+  {% when "location-dot" %}
+    {% assign icon_name = "map-pin" %}
+  {% when "square-envelope" %}
+    {% assign icon_name = "mail" %}
+  {% when "square-facebook" %}
+    {% assign icon_name = "facebook" %}
+  {% when "square-rss" %}
+    {% assign icon_name = "rss" %}
+  {% when "square-x-twitter" %}
+    {% assign icon_name = "twitter" %}
+  {% when "x-twitter" %}
+    {% assign icon_name = "twitter" %}
+  {% when "square-xing" %}
+    {% assign icon_name = "share-2" %}
+  {% when "square-tumblr" %}
+    {% assign icon_name = "message-square" %}
+  {% when "square-lastfm" %}
+    {% assign icon_name = "music" %}
+  {% when "square-github" %}
+    {% assign icon_name = "github" %}
+  {% when "github-alt" %}
+    {% assign icon_name = "github" %}
+  {% when "github-square" %}
+    {% assign icon_name = "github" %}
+  {% when "square-instagram" %}
+    {% assign icon_name = "instagram" %}
+  {% when "square-linkedin" %}
+    {% assign icon_name = "linkedin" %}
+{% endcase %}
+{% assign icon_class = include.class | default: "" %}
+<i data-lucide="{{ icon_name }}" class="icon{% if icon_class != blank %} {{ icon_class }}{% endif %}" aria-hidden="true"></i>

@@ -1,0 +1,128 @@
+/* ===== Mobile: push panels with scroll-to-top on open ===== */
+@media (max-width: 1023px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  body.is-toc-open,
+  body.is-nav-open {
+    overflow: hidden;
+  }
+
+  .initial-content {
+    overflow-x: hidden;
+  }
+
+  /* #main flex layout with sliding push mechanism */
+  #main:has(.sidebar__right) {
+    width: 100vw;
+    min-height: 100dvh;
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    transform: translateX(-100vw);
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    animation: none;
+    background: $page-bg;
+  }
+
+  /* Nav open: push page right, reveal sidebar */
+  #main.notebook--nav-open {
+    transform: translateX(0);
+  }
+
+  /* Nav sidebar */
+  #main:has(.sidebar__right) > .sidebar {
+    width: 100vw;
+    min-height: 0;
+    max-height: 100dvh;
+    flex-shrink: 0;
+    overflow-y: auto;
+    float: none;
+    opacity: 1;
+    padding: 1rem 1.25rem 6rem;
+
+    .nav__title {
+      font-size: $type-size-4;
+      padding-inline-start: 0;
+    }
+
+    .nav__list .nav__items {
+      max-height: none;
+      opacity: 1;
+      overflow: visible;
+      transform: none;
+      font-size: $type-size-5;
+
+      .nav__sub-title {
+        font-size: 1.125em;
+      }
+
+      a {
+        font-size: 1.125em;
+      }
+    }
+  }
+
+  /* Page in flex layout */
+  #main:has(.sidebar__right) > .page {
+    width: 100vw;
+    min-height: 100dvh;
+    flex-shrink: 0;
+    float: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 100vw 100vw;
+    grid-template-rows: auto;
+    transform: translateX(0);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  /* TOC open: slide page grid left to reveal second column */
+  #main:has(.sidebar__right) > .page.toc-open {
+    transform: translateX(-100vw);
+  }
+
+  #main:has(.sidebar__right) > .page .page__inner-wrap {
+    grid-column: 1;
+    grid-row: 1;
+    float: none;
+    width: 100vw;
+    padding: 1rem 1em 4rem;
+  }
+
+  /* TOC sidebar */
+  #main:has(.sidebar__right) > .page .sidebar__right {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100vw;
+    min-height: 0;
+    max-height: 100dvh;
+    overflow-y: auto;
+    float: none;
+    background: $page-bg;
+    padding: 1rem 1em 8rem;
+
+    .toc {
+      border: none;
+      border-radius: 0;
+
+      .nav__title {
+        border-start-start-radius: 0;
+        border-start-end-radius: 0;
+      }
+    }
+
+    .toc__menu {
+      padding-bottom: 2em;
+    }
+  }
+
+  /* Any other direct children of .page go in column 1 */
+  #main:has(.sidebar__right) > .page > *:not(.page__inner-wrap):not(.sidebar__right):not(.toc-toggle) {
+    grid-column: 1;
+  }
+}

@@ -72,10 +72,8 @@ $base0d: #89b4fa !default;
 $base0e: #cba6f7 !default;
 $base0f: #f2cdcd !default;
 
-.author__urls.social-icons i,
-.author__urls.social-icons .svg-inline--fa,
-.page__footer-follow .social-icons i,
-.page__footer-follow .social-icons .svg-inline--fa  {
+.author__urls.social-icons .icon,
+.page__footer-follow .social-icons .icon {
   color: inherit;
 }
 

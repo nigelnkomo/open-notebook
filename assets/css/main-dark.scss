@@ -1,0 +1,19 @@
+---
+# Dark mode stylesheet
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/dark";
+$primary-color: #4a7fb5;
+@import "minimal-mistakes";
+$page-bg: #252a34;
+@import "custom/about";
+@import "custom/footer";
+@import "custom/theme-toggle";
+@import "custom/loader";
+@import "custom/notebooks";
+@import "custom/social"; // social icon brand color overrides
+@import "custom/toc-toggle"; // mobile TOC toggle styles
+@import "custom/notebooks-mobile"; // mobile notebook viewport styles

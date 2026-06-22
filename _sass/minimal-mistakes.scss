@@ -4,6 +4,9 @@
 /* Variables */
 @import "minimal-mistakes/variables";
 
+/* Local fonts */
+@import "minimal-mistakes/fonts";
+
 /* Mixins and functions */
 @import "minimal-mistakes/vendor/breakpoint/breakpoint";
 @include breakpoint-set("to ems", true);

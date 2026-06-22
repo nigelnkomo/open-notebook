@@ -5,6 +5,13 @@ layout: archive
 
 {{ content }}
 
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+
+<h3 class="archive__subtitle">Recent Notebooks</h3>
+<div class="entries-{{ entries_layout }}">
+  {% include documents-collection.html locale=locale entries=site.notebooks type=entries_layout %}
+</div>
+
 <h3 class="archive__subtitle">{{ site.data.ui-text[locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% if paginator %}
@@ -13,7 +20,6 @@ layout: archive
   {% assign posts = site.posts %}
 {% endif %}
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% include documents-collection.html locale=locale entries=posts type=entries_layout %}
 </div>

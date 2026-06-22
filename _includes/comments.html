@@ -47,7 +47,7 @@
             <p class="small">{{ site.data.ui-text[locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} <span class="required">*</span></p>
             <form id="new_comment" class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments">
               <div class="form__spinner">
-                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                {% include icon.html name="loader-circle" class="icon--spin" %}
                 <span class="sr-only">{{ site.data.ui-text[locale].loading_label | default: "Loading..." }}</span>
               </div>
 
@@ -130,7 +130,7 @@
             <p class="small">{{ site.data.ui-text[locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} <span class="required">*</span></p>
             <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://api.staticman.net/v1/entry/{{ site.repository }}/{{ site.staticman.branch }}">
               <div class="form__spinner">
-                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                {% include icon.html name="loader-circle" class="icon--spin" %}
                 <span class="sr-only">{{ site.data.ui-text[locale].loading_label | default: "Loading..." }}</span>
               </div>
 

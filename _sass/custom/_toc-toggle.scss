@@ -1,0 +1,33 @@
+.toc-toggle {
+  display: flex;
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: $primary-color;
+  color: #fff;
+  border: none !important;
+  outline: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  .toc-toggle-icon {
+    stroke-width: 2.5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .toc-toggle {
+    display: none !important;
+  }
+}

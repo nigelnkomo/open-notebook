@@ -345,4 +345,9 @@ select:focus {
   top: 50%;
   inset-inline-start: 50%;
   z-index: 11;
+
+  .icon {
+    width: 3em;
+    height: 3em;
+  }
 }

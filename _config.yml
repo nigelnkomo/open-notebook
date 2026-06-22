@@ -1,15 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-
-# Theme Settings
-#
-# Review documentation to determine if you should use `theme` or `remote_theme`
-# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
-
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise", "catppuccin_latte", "catppuccin_mocha"
@@ -17,10 +5,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 direction                : # "ltr" (default), "rtl" # set the direction of the page
-title                    : "Site Title"
+title                    : "Open Notebook"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "Nigel Nkomo"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -67,7 +55,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  hide                   : true
 search                   : # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
@@ -114,57 +102,40 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  name             : "Nigel Nkomo"
+  avatar           : "/assets/images/avatar.jpg"
+  bio              : "Just *an aspiring computer engineer with a dream to make cyborgs a reality*."
+  location         : "Bulawayo, ZW"
+  email            : "nigel.nkomo@proton.me"
+  phone            : "+263775358610"
+  whatsapp         : "263775358610"
+  signal           : "263775358610"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-square-envelope"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-square-x-twitter"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-square-facebook"
-      # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
 
 # Site Footer
 footer:
+  since: "2026"
   links:
     - label: "Twitter"
-      icon: "fab fa-fw fa-square-x-twitter"
+      icon: "twitter"
       # url:
       # rel: "me"  # optional: adds rel attribute (e.g. for IndieWeb web sign-in)
     - label: "Facebook"
-      icon: "fab fa-fw fa-square-facebook"
+      icon: "facebook"
       # url:
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url:
+      icon: "github"
+      url: "https://github.com/nigelnkomo"
     - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
+      icon: "gitlab"
       # url:
     - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
+      icon: "bitbucket"
       # url:
     - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+      icon: "instagram"
       # url:
-  since: "2013"
-
-
 # Reading Files
 include:
   - .htaccess
@@ -235,6 +206,11 @@ sass:
 # Outputting
 permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Collections
+collections:
+  notebooks:
+    output: true
 
 
 # Pagination with jekyll-paginate
@@ -332,3 +308,15 @@ defaults:
       share: true
       related: true
 
+  # _notebooks
+  - scope:
+      path: ""
+      type: notebooks
+    values:
+      layout: single
+      toc: true
+      toc_sticky: true
+      toc_label: Table of Contents
+      sidebar:
+        title: Notebooks
+        nav: notebooks

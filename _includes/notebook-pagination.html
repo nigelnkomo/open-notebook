@@ -1,0 +1,26 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign notebooks = site.notebooks | sort: 'path' %}
+{% for notebook in notebooks %}
+  {% if notebook.url == page.url %}
+    {% unless forloop.first %}
+      {% assign prev_idx = forloop.index0 | minus: 1 %}
+      {% assign prev = notebooks[prev_idx] %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next_idx = forloop.index0 | plus: 1 %}
+      {% assign next = notebooks[next_idx] %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+<nav class="pagination" aria-label="Notebook pagination">
+  {% if prev %}
+    <a href="{{ prev.url | relative_url }}" class="pagination--pager" title="{{ prev.title | markdownify | strip_html | strip }}">← {{ prev.title }}</a>
+  {% else %}
+    <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[locale].pagination_previous | default: "Previous" }}</a>
+  {% endif %}
+  {% if next %}
+    <a href="{{ next.url | relative_url }}" class="pagination--pager" title="{{ next.title | markdownify | strip_html | strip }}">{{ next.title }} →</a>
+  {% else %}
+    <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[locale].pagination_next | default: "Next" }}</a>
+  {% endif %}
+</nav>

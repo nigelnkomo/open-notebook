@@ -26,9 +26,13 @@
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
+          {% include icon.html name="search" %}
         </button>
         {% endif %}
+        <button id="theme-toggle" type="button" class="theme-toggle" title="Toggle theme">
+          <span class="visually-hidden">Toggle theme</span>
+          <i data-lucide="moon" class="icon"></i>
+        </button>
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>

@@ -6,4 +6,14 @@ search: false
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+$primary-color: #4a7fb5;
 @import "minimal-mistakes"; // main partials
+$page-bg: #fff;
+@import "custom/about"; // about page styles
+@import "custom/footer"; // footer styles
+@import "custom/theme-toggle"; // theme toggle button styles
+@import "custom/loader"; // page loader styles
+@import "custom/notebooks"; // notebook card styles
+@import "custom/social"; // social icon brand color overrides
+@import "custom/toc-toggle"; // mobile TOC toggle styles
+@import "custom/notebooks-mobile"; // mobile notebook viewport styles

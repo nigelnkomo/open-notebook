@@ -136,7 +136,7 @@ $(document).ready(function () {
           anchor.className = "header-link";
           anchor.href = "#" + id;
           anchor.innerHTML =
-            '<span class="sr-only">Permalink</span><i class="fas fa-link"></i>';
+            '<span class="sr-only">Permalink</span><i data-lucide="link" class="icon"></i>';
           anchor.title = "Permalink";
           element.appendChild(anchor);
         }
@@ -226,7 +226,7 @@ $(document).ready(function () {
         var copyButton = document.createElement("button");
         copyButton.title = "Copy to clipboard";
         copyButton.className = "clipboard-copy-button";
-        copyButton.innerHTML = '<span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i>';
+        copyButton.innerHTML = '<span class="sr-only">Copy code</span><i data-lucide="copy" class="icon"></i><i data-lucide="check" class="icon copied"></i>';
         copyButton.addEventListener("click", copyButtonEventListener);
         container.prepend(copyButton);
       });

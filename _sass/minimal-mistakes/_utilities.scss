@@ -184,7 +184,7 @@ $text-alignments: left, right, start, end, center, justify;
 
 .icon {
   display: inline-block;
-  fill: currentColor;
+  fill: none;
   width: 1em;
   height: 1.1em;
   line-height: 1;
@@ -193,50 +193,58 @@ $text-alignments: left, right, start, end, center, justify;
   vertical-align: middle;
 }
 
+.icon--spin {
+  animation: icon-spin 1s linear infinite;
+}
+
+@keyframes icon-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* social icons*/
 
 .social-icons {
-  .fas,
-  .fab,
-  .far,
-  .fal {
+  .icon,
+  .lucide {
     color: $text-color;
   }
 
   @each $color, $icons in (
-    $behance-color: ".fa-behance, .fa-behance-square, .fa-square-behance",
-    $bitbucket-color: ".fa-bitbucket",
-    $bluesky-color: ".fa-bluesky, .fa-square-bluesky",
-    $discord-color: ".fa-discord",
-    $dribbble-color: ".fa-dribbble, .fa-dribbble-square, .fa-square-dribbble",
-    $facebook-color: ".fa-facebook, .fa-facebook-square, .fa-square-facebook, .fa-facebook-f",
-    $flickr-color: ".fa-flickr",
-    $foursquare-color: ".fa-foursquare",
-    $github-color: ".fa-github, .fa-github-alt, .fa-github-square, .fa-square-github",
-    $gitlab-color: ".fa-gitlab",
-    $instagram-color: ".fa-instagram, .fa-square-instagram",
-    $keybase-color: ".fa-keybase",
-    $lastfm-color: ".fa-lastfm, .fa-lastfm-square, .fa-square-lastfm",
-    $linkedin-color: ".fa-linkedin, .fa-linkedin-in",
-    $mastodon-color: ".fa-mastodon",
-    $pinterest-color: ".fa-pinterest, .fa-pinterest-p, .fa-pinterest-square, .fa-square-pinterest",
-    $reddit-color: ".fa-reddit",
-    $rss-color: ".fa-rss, .fa-rss-square, .fa-square-rss",
-    $signal-color: ".fa-signal-messenger",
-    $soundcloud-color: ".fa-soundcloud",
-    $stackoverflow-color: ".fa-stack-exchange, .fa-stack-overflow",
-    $telegram-color: ".fa-telegram",
-    $tumblr-color: ".fa-tumblr, .fa-tumblr-square, .fa-square-tumblr",
-    $twitter-color: ".fa-twitter, .fa-twitter-square",
-    $x-color: ".fa-x-twitter, .fa-square-x-twitter",
-    $vimeo-color: ".fa-vimeo, .fa-vimeo-square, .fa-square-vimeo, .fa-vimeo-v",
-    $vine-color: ".fa-vine",
-    $whatsapp-color: ".fa-whatsapp",
-    $xing-color: ".fa-xing, .fa-xing-square, .fa-square-xing",
-    $youtube-color: ".fa-youtube",
+    $behance-color: ".lucide-behance",
+    $bitbucket-color: ".lucide-bitbucket",
+    $bluesky-color: ".lucide-bluesky",
+    $discord-color: ".lucide-discord",
+    $dribbble-color: ".lucide-dribbble",
+    $facebook-color: ".lucide-facebook",
+    $flickr-color: ".lucide-flickr",
+    $foursquare-color: ".lucide-foursquare",
+    $github-color: ".lucide-github",
+    $gitlab-color: ".lucide-gitlab",
+    $instagram-color: ".lucide-instagram",
+    $keybase-color: ".lucide-key-round",
+    $lastfm-color: ".lucide-music",
+    $linkedin-color: ".lucide-linkedin",
+    $mastodon-color: ".lucide-mastodon",
+    $pinterest-color: ".lucide-pin",
+    $reddit-color: ".lucide-reddit",
+    $rss-color: ".lucide-rss",
+    $signal-color: ".lucide-signal",
+    $soundcloud-color: ".lucide-soundcloud",
+    $stackoverflow-color: ".lucide-code-2",
+    $telegram-color: ".lucide-send",
+    $tumblr-color: ".lucide-message-square",
+    $twitter-color: ".lucide-twitter",
+    $x-color: ".lucide-twitter",
+    $vimeo-color: ".lucide-vimeo",
+    $vine-color: ".lucide-vine",
+    $whatsapp-color: ".lucide-message-circle",
+    $xing-color: ".lucide-share-2",
+    $youtube-color: ".lucide-youtube",
 
     // Avoid "Duplicate key #000000 in map" error
-    $black-color: ".fa-threads, .fa-square-threads, .fa-tiktok",
+    $black-color: ".lucide-threads, .lucide-tiktok",
   ) {
     #{$icons} {
       color: $color;
@@ -553,7 +561,7 @@ pre {
       z-index: 2;
     }
 
-    i {
+    .icon {
       position: absolute;
       top: 0.25em;
       inset-inline-end: 0.25em;
@@ -562,7 +570,7 @@ pre {
       }
     }
 
-    &.copied i {
+    &.copied .icon {
       opacity: 0;
       &.copied {
         opacity: 1;

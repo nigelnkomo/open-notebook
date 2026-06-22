@@ -6,7 +6,7 @@
    Typography
    ========================================================================== */
 
-$doc-font-size: 16px !default;
+$doc-font-size: 17px !default;
 $doc-font-size-medium: $doc-font-size * 1.125 !default;
 $doc-font-size-large: $doc-font-size * 1.25 !default;
 $doc-font-size-x-large: $doc-font-size * 1.375 !default;
@@ -52,7 +52,7 @@ $monospace-code: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consol
 $handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
 
 /* Defaults used in Minimal mistakes */
-$default-sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$default-sans-serif: "Tex Gyre Heros", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 $default-serif: Georgia, Times, serif;
 $default-monospace: Monaco, Consolas, "Lucida Console", monospace;
 
@@ -62,57 +62,57 @@ $emoji-native: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto C
 /* system typefaces */
 $serif: $default-serif !default;
 $sans-serif: $default-sans-serif !default;
-$sans-serif-narrow: $sans-serif !default;
+$sans-serif-narrow: "Tex Gyre Heros", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: $default-monospace !default;
 
 $global-font-family: $sans-serif !default;
-$header-font-family: $sans-serif !default;
+$header-font-family: "Tex Gyre Heros", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $caption-font-family: $serif !default;
 
 /* type scale */
-$type-size-1: 2.441em !default; // ~39.056px
-$type-size-2: 1.953em !default; // ~31.248px
-$type-size-3: 1.563em !default; // ~25.008px
-$type-size-4: 1.25em !default; // ~20px
-$type-size-5: 1em !default; // ~16px
-$type-size-6: 0.75em !default; // ~12px
-$type-size-7: 0.6875em !default; // ~11px
-$type-size-8: 0.625em !default; // ~10px
+$type-size-1: 2em !default; // 34px
+$type-size-2: 1.6471em !default; // 28px
+$type-size-3: 1.2941em !default; // 22px
+$type-size-4: 1.1765em !default; // 20px
+$type-size-5: 1em !default; // 17px
+$type-size-6: 0.8824em !default; // 15px
+$type-size-7: 0.7647em !default; // 13px
+$type-size-8: 0.7059em !default; // 12px
 
 /* headline scale */
-$h-size-1: 1.563em !default; // ~25.008px
-$h-size-2: 1.25em !default; // ~20px
-$h-size-3: 1.125em !default; // ~18px
-$h-size-4: 1.0625em !default; // ~17px
-$h-size-5: 1.03125em !default; // ~16.5px
-$h-size-6: 1em !default; // ~16px
+$h-size-1: 2em !default; // 34px
+$h-size-2: 1.6471em !default; // 28px
+$h-size-3: 1.2941em !default; // 22px
+$h-size-4: 1.1765em !default; // 20px
+$h-size-5: 1em !default; // 17px
+$h-size-6: 0.8824em !default; // 15px
 
 /*
    Colors
    ========================================================================== */
 
-$gray: #7a8288 !default;
-$dark-gray: mix(#000, $gray, 50%) !default;
-$darker-gray: mix(#000, $gray, 60%) !default;
-$light-gray: mix(#fff, $gray, 50%) !default;
-$lighter-gray: mix(#fff, $gray, 90%) !default;
+$gray: #6e6e73 !default;
+$dark-gray: #1d1d1f !default;
+$darker-gray: #111114 !default;
+$light-gray: #d2d2d7 !default;
+$lighter-gray: #e5e5ea !default;
 
-$background-color: #fff !default;
-$code-background-color: #fafafa !default;
-$code-background-color-dark: $light-gray !default;
+$background-color: #f5f5f7 !default;
+$code-background-color: #ffffff !default;
+$code-background-color-dark: $lighter-gray !default;
 $text-color: $dark-gray !default;
-$muted-text-color: mix(#fff, $text-color, 20%) !default;
-$border-color: $lighter-gray !default;
-$form-background-color: $lighter-gray !default;
-$footer-background-color: $lighter-gray !default;
+$muted-text-color: $gray !default;
+$border-color: $light-gray !default;
+$form-background-color: #ffffff !default;
+$footer-background-color: $background-color !default;
 
-$primary-color: #6f777d !default;
+$primary-color: #0071e3 !default;
 $success-color: #3fa63f !default;
 $warning-color: #d67f05 !default;
 $danger-color: #ee5f5b !default;
 $info-color: #3b9cba !default;
 $focus-color: $primary-color !default;
-$active-color: mix(#fff, $primary-color, 80%) !default;
+$active-color: mix(#fff, $primary-color, 88%) !default;
 
 /* YIQ color contrast */
 $yiq-contrasted-dark-default: $dark-gray !default;
@@ -155,16 +155,16 @@ $youtube-color: #bb0000 !default;
 $black-color: #000000;
 
 /* links */
-$link-color: mix(#000, $info-color, 20%) !default;
-$link-color-hover: mix(#000, $link-color, 25%) !default;
-$link-color-visited: mix(#fff, $link-color, 15%) !default;
-$masthead-link-color: $primary-color !default;
-$masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
-$navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
+$link-color: $primary-color !default;
+$link-color-hover: #0077ed !default;
+$link-color-visited: mix(#7d7d85, $link-color, 50%) !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#fff, $primary-color, 85%) !default;
 
 /* notices */
-$notice-background-mix: 80% !default;
-$code-notice-background-mix: 90% !default;
+$notice-background-mix: 92% !default;
+$code-notice-background-mix: 96% !default;
 
 /* syntax highlighting (base16) */
 $base00: #263238 !default;
@@ -207,8 +207,8 @@ $right-sidebar-width-wide: 400px !default;
    Other
    ========================================================================== */
 
-$border-radius: 4px !default;
-$box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125) !default;
+$border-radius: 12px !default;
+$box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !default;
 $nav-height: 2em !default;
 $nav-toggle-height: 2rem !default;
 $navicon-width: 1.5rem !default;
